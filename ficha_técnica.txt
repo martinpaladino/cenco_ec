@@ -1,0 +1,77 @@
+Indicadores sociodemográficos seleccionados de Cantónes del Ecuador
+===================================================================
+
+Ficha técnica
+=============
+
+
+Elaborado por Martín Paladino 
+
+Contacto: martinpala@gmail.com
+
+Descripción
+-----------
+
+Base de datos con 18 indicadores seleccionados de cantones del Ecuador con datos del Censo 2010
+
+Fuentes de datos
+----------------
+
+Todos los datos fueron descargados entre el 11/04/2019 y el 12/04/2019 del portal http://app.sni.gob.ec/web/menu/. 
+Corresponden a las siguientes pestañas: 
+
+- Indicadores generales de población 2010
+- Educación 2010
+- Vivienda y hogar 2010
+- Indicadores económicos 2010
+- Pobreza 2010
+
+Cada serie de indicadores se descargó en formato .xls, desagregados a nivel cantón. 
+
+Reproductibilidad
+-----------------
+
+El dataset incluye los archivos fuente tal como fueron descargados y el script `carga.R` que los lee de la ubicación `./datos` y realiza las transformaciones intermedias y el join final de datos.
+
+Características de los datos
+----------------------------
+
+Observaciones (filas): cada fila corresponde a un Cantón del Ecuador, en total 224 Cantones. Se identifican por Provincia y Cantón, ya que dos cantones tienen nombre identico (Bolivar y Olmedo).
+
+Variables (columnas): 
+
+En total 20 variables, dos de identificación (Provincia y Cantón) y 18 variables numéricas con atributos de cada cantón. 
+Las fichas técnicas de cada variables están disponibles en http://app.sni.gob.ec/web/menu/
+
+La variable Porcentaje de población rural fue calculada a partir de las variables Total y Rural, disponibles para cada Cantón. Las restantes variables reportan el datos directos descargado del SNI. En dichos datos se utiliza el símbolo "-" para indicar ausencia de valor. En esos casos se imputó ese símbolo a 0.
+
+Listado de variables
+--------------------
+
+|Nombre                                                                            |Tipo      |
+|:---------------------------------------------------------------------------------|:---------|
+|Provincia                                                                         |character |
+|Cantón                                                                            |character |
+|Población Total                                                                   |numeric   |
+|Porcentaje de población autoidentificada como otra                                |numeric   |
+|Porcentaje de población blanca                                                    |numeric   |
+|Porcentaje de población indígena                                                  |numeric   |
+|Porcentaje de población mestiza                                                   |numeric   |
+|Porcentaje de población montubia                                                  |numeric   |
+|Porcentaje de población mulata                                                    |numeric   |
+|Porcentaje de población negra-afroecuatoriana                                     |numeric   |
+|Porcentaje de población rural                                                     |numeric   |
+|Escolaridad promedio del jefe de hogar                                            |numeric   |
+|Tasa de analfabetismo                                                             |numeric   |
+|Pobreza por NBI (Personas)                                                        |numeric   |
+|Porcentaje de viviendas con abastecimiento de agua por red pública en su interior |numeric   |
+|Porcentaje de viviendas con servicio de energía eléctrica                         |numeric   |
+|Porcentaje de viviendas que eliminan la basura por carro recolector               |numeric   |
+|Población económicamente activa                                                   |numeric   |
+|Población ocupada                                                                 |numeric   |
+|Población ocupada en el sector público                                            |numeric   |
+
+Formato de archivo
+------------------
+
+El archivo de datos indicadores_censales_seleccionados.csv tiene formato de valores separados por comas con la codificación de caracteres utf-8
